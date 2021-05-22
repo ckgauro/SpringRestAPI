@@ -18,13 +18,15 @@ we can use **@RequestParam** to extract query parameters, form parameters, and e
 #### Test  
 
 - Test1 in PostMan 
+
 ##### With Parameter
 localhost:8080/greeting
 
 <img src="image/test.png">
 --------------------
 - Test2 in PostMan
-##### Without Parameter
+
+#### Without Parameter
 localhost:8080/greeting
 
 <img src="image/test2.png">
