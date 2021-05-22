@@ -7,4 +7,4 @@ A java.util.concurrent.atomic.AtomicLong class provides operations on underlying
 
 localhost:8080/greeting
 
-<img src="images/image01.png">
+<img src="image/image01.png">
