@@ -23,6 +23,7 @@ we can use **@RequestParam** to extract query parameters, form parameters, and e
 localhost:8080/greeting
 
 <img src="image/test.png">
+
 --------------------
 - Test2 in PostMan
 
