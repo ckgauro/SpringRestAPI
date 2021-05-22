@@ -13,6 +13,8 @@ we can use **@RequestParam** to extract query parameters, form parameters, and e
   - required - tells whether the parameter is required
   - value - alias for name
 ----------
+# Test Result
+
 #### Test  
 
 - Test1 in PostMan 
@@ -20,7 +22,7 @@ we can use **@RequestParam** to extract query parameters, form parameters, and e
 localhost:8080/greeting
 
 <img src="image/test.png">
-
+--------------------
 - Test2 in PostMan
 ##### Without Parameter
 localhost:8080/greeting
