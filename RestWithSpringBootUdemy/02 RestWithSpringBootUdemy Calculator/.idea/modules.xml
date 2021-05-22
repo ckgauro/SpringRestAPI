@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/02 RestWithSpringBootUdemy Calculator.iml" filepath="$PROJECT_DIR$/.idea/02 RestWithSpringBootUdemy Calculator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/restwithspringbootudemy/restwithspringbootudemy.iml" filepath="$PROJECT_DIR$/restwithspringbootudemy/restwithspringbootudemy.iml" />
     </modules>
   </component>
 </project>
