@@ -3,6 +3,7 @@ package com.gauro.controller;
 import com.gauro.model.Person;
 import com.gauro.services.PersonServices;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,13 +20,13 @@ public class PersonController {
         this.personServices = personServices;
     }
 
-    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping
     public List<Person> findAll(){
         return personServices.findAll();
     }
 
     @GetMapping(value = "/{id}")
-    public Person findById(@PathVariable("id") String id){
+    public Person findById(@PathVariable("id") Long id){
         return personServices.findById(id);
     }
 
@@ -39,9 +40,11 @@ public class PersonController {
         return  personServices.update(person);
     }
 
-    @DeleteMapping
-    public  void delete(@PathVariable("id") String id){
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<?> delete(@PathVariable("id") Long id){
         personServices.delete(id);
+        return ResponseEntity.ok().build();
+
     }
 
 
