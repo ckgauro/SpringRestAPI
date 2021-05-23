@@ -1,6 +1,5 @@
-### @Service
+### 
 
-@Service - indicates that an annotated class is a service class.
 
 --------------
 
