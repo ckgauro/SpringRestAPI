@@ -10,6 +10,8 @@ ResponseEntityExceptionHandler is a convenient base class for @ControllerAdvice 
 ### @ResponseStatus
 @ResponseStatus marks a method or exception class with the status code and reason message that should be returned. The status code is applied to the HTTP response when the handler method is invoked, or whenever the specified exception is thrown. It overrides status information set by other means, like ResponseEntity or redirect:
 
+### WebRequest
+Generic interface for a web request. Mainly intended for generic web request interceptors, giving them access to general request metadata, not for actual handling of the request.
 
 ### @PathVariable
 @PathVariable is a Spring annotation which indicates that a method parameter should be bound to a URI template variable. If the method parameter is Map<String, String> then the map is populated with all path variable names and values.
