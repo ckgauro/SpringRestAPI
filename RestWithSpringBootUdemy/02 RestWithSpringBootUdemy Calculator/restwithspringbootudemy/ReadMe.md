@@ -14,6 +14,9 @@ It declares @ExceptionHandler, @InitBinder, or @ModelAttribute methods to be sha
 
 ResponseEntity represents an HTTP response, including headers, body, and status. While @ResponseBody puts the return value into the body of the response, ResponseEntity also allows us to add headers and status code.
 
+### @ResponseStatus
+@ResponseStatus marks a method or exception class with the status code and reason message that should be returned. The status code is applied to the HTTP response when the handler method is invoked, or whenever the specified exception is thrown. It overrides status information set by other means, like ResponseEntity or redirect:
+
 ----------
 # Test Result
 
