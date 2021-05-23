@@ -1,17 +1,19 @@
-### AtomicLong
-A java.util.concurrent.atomic.AtomicLong class provides operations on underlying long value that can be read and written atomically, and also contains advanced atomic operations. AtomicLong supports atomic operations on underlying long variable. It have get and set methods that work like reads and writes on volatile variables. That is, a set has a happens-before relationship with any subsequent get on the same variable. The atomic compareAndSet method also has these memory consistency features.
+### @ControllerAdvice
+@ControllerAdvice is a specialization of the @Component annotation which allows to handle exceptions across the whole application in one global handling component. It can be viewed as an interceptor of exceptions thrown by methods annotated with @RequestMapping and similar.
 
-### @RestController
-Spring 4.0 introduced the **@RestController** annotation in order to simplify the creation of RESTful web services. It's a convenient annotation that combines **@Controller** and **@ResponseBody**
+It declares @ExceptionHandler, @InitBinder, or @ModelAttribute methods to be shared across multiple @Controller classes.
 
-### @RequestParam
-we can use **@RequestParam** to extract query parameters, form parameters, and even files from the request.**@RequestParam** is a Spring annotation used to bind a web request parameter to a method parameter.
+### @PathVariable
+@PathVariable is a Spring annotation which indicates that a method parameter should be bound to a URI template variable. If the method parameter is Map<String, String> then the map is populated with all path variable names and values.
 
-- It has the following optional elements:
-  - defaultValue - used as a fallback when the request parameter is not provided or has an empty value 
-  - name - name of the request parameter to bind to
-  - required - tells whether the parameter is required
-  - value - alias for name
+### @GetMapping
+
+@GetMapping annotation maps HTTP GET requests onto specific handler methods. It is a composed annotation that acts as a shortcut for @RequestMapping(method = RequestMethod.GET).
+
+### ResponseEntity
+
+ResponseEntity represents an HTTP response, including headers, body, and status. While @ResponseBody puts the return value into the body of the response, ResponseEntity also allows us to add headers and status code.
+
 ----------
 # Test Result
 
@@ -19,15 +21,70 @@ we can use **@RequestParam** to extract query parameters, form parameters, and e
 
 - Test1 in PostMan 
 
-##### With Parameter
-localhost:8080/greeting
+##### Sum
+localhost:8080/sum/2/34
 
-<img src="image/test.png">
+``` 
+35.0
+```
 
---------------------
-- Test2 in PostMan
+- Test1 in PostMan
 
-#### Without Parameter
-localhost:8080/greeting
+##### Sum
+localhost:8080/subtraction/5/4
 
-<img src="image/test2.png">
+``` 
+1.0
+```
+
+
+- Test1 in PostMan
+
+##### Sum
+localhost:8080/multiplication/2/3
+
+``` 
+6.0
+```
+
+
+- Test1 in PostMan
+
+##### Sum
+localhost:8080/division/12/3
+
+``` 
+4.0
+```
+
+
+- Test1 in PostMan
+
+##### Sum
+localhost:8080/mean/2/34
+
+``` 
+18.0
+```
+
+- Test1 in PostMan
+
+##### Sum
+localhost:8080/squareRoot/4
+
+``` 
+2.0
+```
+
+----------------
+
+##### Exception part 
+
+localhost:8080/squareRoot/sdf
+``` 
+{
+    "timestamp": "2021-05-23T03:32:46.449+00:00",
+    "message": "Please set a numeric value!",
+    "details": "uri=/squareRoot/sdf"
+}
+```
