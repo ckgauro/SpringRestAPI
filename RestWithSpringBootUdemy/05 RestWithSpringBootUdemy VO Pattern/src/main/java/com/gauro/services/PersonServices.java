@@ -1,14 +1,14 @@
 package com.gauro.services;
 
+import com.gauro.converter.DozerConverter;
+import com.gauro.data.model.Person;
+import com.gauro.data.vo.PersonVO;
 import com.gauro.exception.ResourceNotFoundException;
-import com.gauro.model.Person;
+import com.gauro.data.vo.model.Person;
 import com.gauro.repository.PersonRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicLong;
-import java.util.stream.IntStream;
 
 /**
  * @author Chandra
@@ -23,11 +23,16 @@ public class PersonServices {
         this.personRepository = personRepository;
     }
 
-    public Person create(Person person) {
-        return personRepository.save(person);
+    public PersonVO create(PersonVO person) {
+//        var entity= DozerConverter.parseObject(person, Person.class);
+//        var vo=DozerConverter.parseObject(personRepository.save(entity), PersonVO.class);
+//        return vo;
+        Person entity = DozerConverter.parseObject(person, Person.class);
+        var vo = DozerConverter.parseObject(personRepository.save(entity), PersonVO.class);
+        return vo;
     }
 
-    public List<Person> findAll() {
+    public List<PersonVO> findAll() {
 
         return personRepository.findAll();
     }

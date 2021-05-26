@@ -1,8 +1,8 @@
 package com.gauro.controller;
 
-import com.gauro.model.Person;
+import com.gauro.data.vo.PersonVO;
+import com.gauro.data.vo.model.Person;
 import com.gauro.services.PersonServices;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,22 +21,22 @@ public class PersonController {
     }
 
     @GetMapping
-    public List<Person> findAll(){
+    public List<PersonVO> findAll(){
         return personServices.findAll();
     }
 
     @GetMapping(value = "/{id}")
-    public Person findById(@PathVariable("id") Long id){
+    public PersonVO findById(@PathVariable("id") Long id){
         return personServices.findById(id);
     }
 
     @PostMapping
-    public Person create(@RequestBody Person person){
+    public PersonVO create(@RequestBody PersonVO person){
         return personServices.create(person);
     }
 
     @PutMapping
-    public Person update(@RequestBody Person person){
+    public PersonVO update(@RequestBody PersonVO person){
         return  personServices.update(person);
     }
 

@@ -1,4 +1,4 @@
-package com.gauro.model;
+package com.gauro.data.model;
 
 import lombok.*;
 
