@@ -12,9 +12,10 @@
 
 - [Get] List of persons
    - localhost:8080/persons
-
+     <img src="images/list.png">
 - [Post] person
     - localhost:8080/persons
+      <img src="images/post.png">
     ``` 
    {
         "id": 3,
@@ -27,7 +28,7 @@
 
 - [Put] person
     - localhost:8080/persons
-
+      <img src="images/put.png">
  ``` 
    {
         "id": 3,
@@ -40,3 +41,4 @@
 
 - [Delete] person
     - localhost:8080/persons
+      <img src="images/delete.png">
