@@ -8,7 +8,7 @@
 
 - [Get] single person
    - localhost:8080/persons/1
-
+     <img src="images/get.png">
 
 - [Get] List of persons
    - localhost:8080/persons
