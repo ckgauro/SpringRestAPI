@@ -1,8 +1,8 @@
 package com.gauro.controller;
 
 import com.gauro.data.vo.PersonVO;
-import com.gauro.data.vo.model.Person;
 import com.gauro.services.PersonServices;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,6 +11,7 @@ import java.util.List;
 /**
  * @author Chandra
  */
+@Slf4j
 @RestController
 @RequestMapping("/persons")
 public class PersonController {
@@ -37,6 +38,8 @@ public class PersonController {
 
     @PutMapping
     public PersonVO update(@RequestBody PersonVO person){
+        log.info("Update is called =====>");
+        log.info(person.toString());
         return  personServices.update(person);
     }
 

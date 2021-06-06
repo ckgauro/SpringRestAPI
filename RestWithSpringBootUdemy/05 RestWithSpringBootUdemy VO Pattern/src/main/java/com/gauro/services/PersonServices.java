@@ -4,7 +4,6 @@ import com.gauro.converter.DozerConverter;
 import com.gauro.data.model.Person;
 import com.gauro.data.vo.PersonVO;
 import com.gauro.exception.ResourceNotFoundException;
-import com.gauro.data.vo.model.Person;
 import com.gauro.repository.PersonRepository;
 import org.springframework.stereotype.Service;
 
@@ -33,23 +32,27 @@ public class PersonServices {
     }
 
     public List<PersonVO> findAll() {
+        return  DozerConverter.parseListObjects(personRepository.findAll(), PersonVO.class);
 
-        return personRepository.findAll();
+       // return personRepository.findAll();
     }
 
-    public Person findById(Long id) {
-        return personRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException(NO_RECORDS_FOUND_FOR_THIS_ID));
+    public PersonVO findById(Long id) {
+
+        Person person= personRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException(NO_RECORDS_FOUND_FOR_THIS_ID));
+        return  DozerConverter.parseObject(person, PersonVO.class);
     }
 
-    public Person update(Person person) {
+    public PersonVO update(PersonVO person) {
         Person entityPerson = personRepository.findById(person.getId()).orElseThrow(() -> new ResourceNotFoundException(NO_RECORDS_FOUND_FOR_THIS_ID));
 
         entityPerson.setFirstName(person.getFirstName());
         entityPerson.setLastName(person.getLastName());
         entityPerson.setAddress(person.getAddress());
         entityPerson.setGender(person.getGender());
+        PersonVO personVO=DozerConverter.parseObject(personRepository.save(entityPerson), PersonVO.class);
 
-        return personRepository.save(entityPerson);
+        return personVO;
 
         // return  personRepository.save();
     }
