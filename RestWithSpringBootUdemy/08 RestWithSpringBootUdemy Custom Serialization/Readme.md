@@ -5,3 +5,7 @@ https://www.tutorialspoint.com/jackson_annotations/index.htm
 ###@JsonPropertyOrder 
 
 @JsonPropertyOrder annotation is used to specify the ordering of the serialized properties.
+
+@JsonProperty
+
+@JsonIgnore is used at field level to mark a property or list of properties to be ignored.
