@@ -6,10 +6,11 @@ Generally speaking, the principle implies that the API should guide the client t
 
 ```
 <dependency>
-			<groupId>org.springframework.hateoas</groupId>
-			<artifactId>spring-hateoas</artifactId>
-		</dependency>
+ <groupId>org.springframework.hateoas</groupId>
+ <artifactId>spring-hateoas</artifactId>
+</dependency>
 ```
+
 
 >  Adding Hypermedia Support to a Resource
 The project provides a base class called RepresentationModel to inherit from when creating a resource representation:
