@@ -56,8 +56,11 @@ public class PersonController {
 
     @PutMapping(produces = {"application/json", "application/json", "application/x-yaml"}, consumes = {"application/x-yaml", "application/json", "application/xml"})
     public PersonVO update(@RequestBody PersonVO personVO) {
+        PersonVO personVO1=personServices.update(personVO);
+        personVO1.add(linkTo(methodOn(PersonController.class).findById(personVO1.getId())).withSelfRel());
 
-        return personServices.update(personVO);
+
+        return personVO1;
     }
 
     @DeleteMapping("/{id}")
