@@ -14,20 +14,33 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 @EnableWebMvc
 public class WebConfig implements WebMvcConfigurer {
-
+    private static final MediaType MEDIA_TYPE_YML = MediaType.valueOf("application/x-yaml");
     @Override
     public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
         // Via EXTENSION. localhost:8080/persons.x-yaml
+        log.info("WebConfig========> Called");
 //        configurer.favorParameter(false).ignoreAcceptHeader(false)
 //                .defaultContentType(MediaType.APPLICATION_JSON)
 //                .mediaType("json", MediaType.APPLICATION_JSON)
 //                .mediaType("xml", MediaType.APPLICATION_XML)       ;
-        log.info("WebConfig========> Called");
-        configurer.favorParameter(false).
-                ignoreAcceptHeader(false).
-                defaultContentType(MediaType.APPLICATION_JSON).
-                mediaType("xml", MediaType.APPLICATION_XML).
-                mediaType("json", MediaType.APPLICATION_JSON);
+
+        // Via QUERY PARAM. localhost:8080/person?mediaType=xml
+
+//          configurer.favorPathExtension(false) .favorParameter(true)
+//          .parameterName("mediaType") .ignoreAcceptHeader(true)
+//          .useRegisteredExtensionsOnly(false)
+//          .defaultContentType(MediaType.APPLICATION_JSON) .mediaType("json",
+//          MediaType.APPLICATION_JSON) .mediaType("xml", MediaType.APPLICATION_XML);
+
+        configurer.favorPathExtension(false)
+                .favorParameter(false)
+                .ignoreAcceptHeader(false)
+                .useRegisteredExtensionsOnly(false)
+                .defaultContentType(MediaType.APPLICATION_JSON)
+                .mediaType("json", MediaType.APPLICATION_JSON)
+                .mediaType("xml", MediaType.APPLICATION_XML)
+                .mediaType("x-yaml", MEDIA_TYPE_YML);
+
         // WebMvcConfigurer.super.configureContentNegotiation(configurer);
     }
 }
