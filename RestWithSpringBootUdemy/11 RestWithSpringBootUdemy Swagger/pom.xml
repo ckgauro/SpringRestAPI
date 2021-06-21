@@ -11,8 +11,8 @@
 	<groupId>com.gauro</groupId>
 	<artifactId>contentnegociation</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>contentnegociation</name>
-	<description>contentnegociation</description>
+	<name>Swagger Application</name>
+	<description>Swagger Application</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
@@ -68,6 +68,18 @@
 		<dependency>
 			<groupId>org.springframework.hateoas</groupId>
 			<artifactId>spring-hateoas</artifactId>
+		</dependency>
+		<!-- for Swagger UI support -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.9.2</version>
+		</dependency>
+		<!-- for Swagger Endpoints support -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.9.2</version>
 		</dependency>
 
 		<!-- for YML support -->
