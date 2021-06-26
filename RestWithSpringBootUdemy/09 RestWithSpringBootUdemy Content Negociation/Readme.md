@@ -1,57 +1,11 @@
-In HTTP, content negotiation is the mechanism that is used for serving different representations of a resource at the same URI, so that the user agent can specify which is best suited for the user (for example, which language of a document, which image format, or which content encoding).
+## Jackson Annotations
+Jackson is a very popular and efficient java based library to serialize or map java objects to JSON and vice versa. This tutorial will teach you basic and advanced Jackson library Annotations features and their usage in a simple and intuitive way.
+https://www.tutorialspoint.com/jackson_annotations/index.htm
 
-#WebMvcConfigurer
+###@JsonPropertyOrder 
 
-https://www.baeldung.com/spring-mvc-tutorial
+@JsonPropertyOrder annotation is used to specify the ordering of the serialized properties.
 
-Test
--------------
-[GET] localhost:8080/persons/v1
-[Headers]Accept --> application/xml
---Result
-<List>
-<item>
-<id>1</id>
-<firstName>Leandro</firstName>
-<lastName>Costa</lastName>
-<address>Uberlândia - Minas Gerais - Brasil</address>
-<gender>Male</gender>
-</item>
-<item>
-<id>2</id>
-<firstName>Gabriela</firstName>
-<lastName>Costa</lastName>
-<address>Uberlândia - Minas Gerais - Brasil</address>
-<gender>Female</gender>
-</item>
-<item>
-<id>5</id>
-<firstName>Flávio</firstName>
-<lastName>Costa</lastName>
-<address>Patos de Minas - Minas Gerais - Brasil</address>
-<gender>Male</gender>
-</item>
-<item>
-<id>7</id>
-<firstName>Fernanda</firstName>
-<lastName>Cardoso da Silva</lastName>
-<address>Uberlândia - Minas Gerais - Brasil</address>
-<gender>Female</gender>
-</item>
-<item>
-<id>8</id>
-<firstName>Pedro</firstName>
-<lastName>Paulo</lastName>
-<address>Patos de Minas - Minas Gerais - Brasil</address>
-<gender>Male</gender>
-</item>
-<item>
-<id>9</id>
-<firstName>Marcos</firstName>
-<lastName>Paulo</lastName>
-<address>Patos de Minas - Minas Gerais - Brasil</address>
-<gender>Male</gender>
-</item>
-</List>
+@JsonProperty
 
-
+@JsonIgnore is used at field level to mark a property or list of properties to be ignored.

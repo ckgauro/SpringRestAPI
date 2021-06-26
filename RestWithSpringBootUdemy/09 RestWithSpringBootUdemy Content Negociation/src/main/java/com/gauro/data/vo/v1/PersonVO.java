@@ -17,20 +17,20 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-//@JsonPropertyOrder({"id","address","first_name","last_name","gender"})
+@JsonPropertyOrder({"id","address","first_name","last_name","gender"})
 public class PersonVO implements Serializable {
 
     private static final long serialVersionUID=1l;
 
     private Long id;
-    //@JsonProperty("first_name")
+    @JsonProperty("first_name")
     private String firstName;
 
-    //@JsonProperty("last_name")
+    @JsonProperty("last_name")
     private String lastName;
 
     private String address;
-    //@JsonIgnore
+    @JsonIgnore
     private String gender;
 
 }

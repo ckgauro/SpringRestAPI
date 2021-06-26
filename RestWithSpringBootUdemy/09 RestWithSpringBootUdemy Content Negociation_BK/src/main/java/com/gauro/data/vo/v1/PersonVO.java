@@ -1,37 +1,36 @@
 package com.gauro.data.vo.v1;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.github.dozermapper.core.Mapping;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.hateoas.RepresentationModel;
 
 import java.io.Serializable;
-import java.util.Date;
 
 /**
  * @author Chandra
  */
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
-@JsonPropertyOrder
-public class BookVO  extends RepresentationModel<BookVO> implements Serializable {
+//@JsonPropertyOrder({"id","address","first_name","last_name","gender"})
+public class PersonVO implements Serializable {
+
     private static final long serialVersionUID=1l;
 
-    @Mapping("id")
-    @JsonProperty("id")
     private Long id;
-    private String author;
+    //@JsonProperty("first_name")
+    private String firstName;
 
-    private Date launchDate;
-    private Double price;
-    private String title;
+    //@JsonProperty("last_name")
+    private String lastName;
 
-
+    private String address;
+    //@JsonIgnore
+    private String gender;
 
 }
