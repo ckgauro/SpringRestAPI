@@ -18,7 +18,6 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
  * @author Chandra
  */
 @Slf4j
-
 @Api(tags = "Test for Person Controller")
 @RestController
 @RequestMapping("/persons/v1")
