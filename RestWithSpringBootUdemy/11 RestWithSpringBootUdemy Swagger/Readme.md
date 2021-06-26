@@ -1,14 +1,13 @@
-The Spring HATEOAS project is a library of APIs that we can use to easily create REST representations that follow the principle of HATEOAS (Hypertext as the Engine of Application State).
-
-Generally speaking, the principle implies that the API should guide the client through the application by returning relevant information about the next potential steps, along with each response.
 
 **Spring HATEOAS offers three abstractions for creating the URI – RepresentationModel, Link, and WebMvcLinkBuilder.** We can use these to create the metadata and associate it to the resource representation.
 
 ```
-<dependency>
- <groupId>org.springframework.hateoas</groupId>
- <artifactId>spring-hateoas</artifactId>
-</dependency>
+	<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+
 ```
 
 
@@ -35,91 +34,15 @@ finally, the withSelfMethod() qualifies the relation as a self-link
 
 Test
 -------------
-[GET] localhost:8080/persons/v1
-[Headers]Accept --> application/json
+[GET] localhost:8080/v2/api-docs
 
 -------------
 
 --Result
-````json 
-[
+````
 {
-"id": 1,
-"address": "Uberlândia - Minas Gerais - Brasil",
-"gender": "Male",
-"firstName": "Leandro",
-"lastName": "Costa",
-"links": [
-{
-"rel": "self",
-"href": "http://localhost:8080/persons/v1/1"
-}
-]
-},
-{
-"id": 2,
-"address": "Uberlândia - Minas Gerais - Brasil",
-"gender": "Female",
-"firstName": "Gabriela",
-"lastName": "Costa",
-"links": [
-{
-"rel": "self",
-"href": "http://localhost:8080/persons/v1/2"
-}
-]
-},
-{
-"id": 5,
-"address": "Patos de Minas - Minas Gerais - Brasil",
-"gender": "Male",
-"firstName": "Flávio",
-"lastName": "Costa",
-"links": [
-{
-"rel": "self",
-"href": "http://localhost:8080/persons/v1/5"
-}
-]
-},
-{
-"id": 7,
-"address": "Uberlândia - Minas Gerais - Brasil",
-"gender": "Female",
-"firstName": "Fernanda",
-"lastName": "Cardoso da Silva",
-"links": [
-{
-"rel": "self",
-"href": "http://localhost:8080/persons/v1/7"
-}
-]
-},
-{
-"id": 8,
-"address": "Patos de Minas - Minas Gerais - Brasil",
-"gender": "Male",
-"firstName": "Pedro",
-"lastName": "Paulo",
-"links": [
-{
-"rel": "self",
-"href": "http://localhost:8080/persons/v1/8"
-}
-]
-},
-{
-"id": 9,
-"address": "Patos de Minas - Minas Gerais - Brasil",
-"gender": "Male",
-"firstName": "Marcos",
-"lastName": "Paulo",
-"links": [
-{
-"rel": "self",
-"href": "http://localhost:8080/persons/v1/9"
-}
-]
-}
-]
+    "swagger": "2.0",
+    "info": {
+    ..... 
+
 ````

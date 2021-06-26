@@ -2,6 +2,7 @@ package com.gauro.controller;
 
 import com.gauro.data.vo.v1.PersonVO;
 import com.gauro.services.PersonServices;
+import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.hateoas.Link;
 import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
@@ -17,6 +18,8 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
  * @author Chandra
  */
 @Slf4j
+
+@Api(tags = "Test for Person Controller")
 @RestController
 @RequestMapping("/persons/v1")
 public class PersonController {
@@ -27,7 +30,8 @@ public class PersonController {
         this.personServices = personServices;
     }
 
-    @GetMapping(produces = {"application/json", "application/xml", "application/x-yaml"})
+  //  @GetMapping(produces = {"application/json", "application/xml", "application/x-yaml"})
+    @GetMapping(produces = {"application/json" , "application/xml"})
     public List<PersonVO> findAll() {
         List<PersonVO> personVOS = personServices.findAll();
         personVOS.stream().forEach(p -> {

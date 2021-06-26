@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SerializationDemoApplication {
+public class ContentNegotiationDemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SerializationDemoApplication.class, args);
+		SpringApplication.run(ContentNegotiationDemoApplication.class, args);
 	}
 
 }
